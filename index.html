@@ -10,152 +10,56 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div id="floatingHearts" class="floating-hearts" aria-hidden="true"></div>
-
 <nav class="navbar" id="navbar">
   <a href="#hero" class="nav-brand">Love Letters</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <div class="nav-links" id="navLinks">
-    <a href="#story">Our Story</a>
-    <a href="#memories">Memories</a>
-    <a href="#quotes">Quotes</a>
-    <a href="#secret">Surprise</a>
-    <a href="#message">Leave a Message</a>
+    <a href="#story">Our Story</a><a href="#memories">Memories</a><a href="#quotes">Quotes</a><a href="#secret">Surprise</a><a href="#message">Leave a Message</a>
   </div>
 </nav>
-
-<!-- ===================== HERO ===================== -->
 <header class="hero" id="hero">
   <div class="hero-glow" aria-hidden="true"></div>
-  <svg class="hero-heart" viewBox="0 0 200 180" aria-hidden="true">
-    <path d="M100 170 C 20 110, 0 70, 0 40 C 0 10, 25 -5, 50 5 C 70 13, 90 35, 100 55 C 110 35, 130 13, 150 5 C 175 -5, 200 10, 200 40 C 200 70, 180 110, 100 170 Z" />
-  </svg>
+  <svg class="hero-heart" viewBox="0 0 200 180" aria-hidden="true"><path d="M100 170 C20 110 0 70 0 40 C0 10 25 -5 50 5 C70 13 90 35 100 55 C110 35 130 13 150 5 C175 -5 200 10 200 40 C200 70 180 110 100 170Z" /></svg>
   <div class="floating-hearts hero-only" id="heroHearts" aria-hidden="true"></div>
-
   <div class="hero-content">
     <p class="eyebrow">a little corner of the internet, made for two</p>
     <h1>Love is a story<br>written by two hearts.</h1>
     <p class="hero-sub">Every scroll is a page. Every page, a memory.</p>
     <a href="#story" class="btn btn-primary">Begin our story</a>
   </div>
-
-  <a href="#story" class="scroll-cue" aria-label="Scroll down">
-    <span></span>
-  </a>
+  <a href="#story" class="scroll-cue" aria-label="Scroll down"><span></span></a>
 </header>
-
-<!-- ===================== OUR STORY ===================== -->
 <section class="section story" id="story">
-  <p class="section-eyebrow">chapter one</p>
-  <h2 class="section-title">Our Story</h2>
-  <p class="section-lede">Replace these moments with your own — the day you met, the first date, the trip you still talk about.</p>
-
+  <p class="section-eyebrow">chapter one</p><h2 class="section-title">Our Story</h2>
+  <p class="section-lede">Some stories are written in ink. The best ones are written in moments.</p>
   <ol class="timeline" id="timeline">
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-card">
-        <span class="timeline-date">The beginning</span>
-        <h3>The day we met</h3>
-        <p>Write about the moment your paths crossed — where you were, what you noticed first, how it felt.</p>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-card">
-        <span class="timeline-date">First date</span>
-        <h3>The one that started it all</h3>
-        <p>Describe the place, the nerves, the little details you still remember years later.</p>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-card">
-        <span class="timeline-date">A favorite memory</span>
-        <h3>The trip we'll never forget</h3>
-        <p>A getaway, a road trip, a night that turned into a core memory — tell it here.</p>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-card">
-        <span class="timeline-date">Today</span>
-        <h3>Still writing this story</h3>
-        <p>Say where you are now, and why the story isn't finished yet.</p>
-      </div>
-    </li>
+    <li class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">The beginning</span><h3>The day we met</h3><p>Somewhere between two ordinary moments, something extraordinary began.</p></div></li>
+    <li class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">A first memory</span><h3>The one that stayed</h3><p>Of all the little moments, some become impossible to forget.</p></div></li>
+    <li class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">A favorite chapter</span><h3>The memory we'll keep</h3><p>The kind of day that becomes a story every time it's remembered.</p></div></li>
+    <li class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">Today</span><h3>Still writing</h3><p>There is no final page yet. That's the beautiful part.</p></div></li>
   </ol>
 </section>
-
-<!-- ===================== MEMORIES ===================== -->
 <section class="section memories" id="memories">
-  <p class="section-eyebrow">chapter two</p>
-  <h2 class="section-title">Beautiful Memories</h2>
-  <p class="section-lede">Swap these placeholders for your own photos — just replace the image source in the code.</p>
-
-  <div class="memory-grid" id="memoryGrid">
-    <!-- cards injected by script.js so captions + reveal animation stay in sync -->
-  </div>
+  <p class="section-eyebrow">chapter two</p><h2 class="section-title">Beautiful Memories</h2>
+  <p class="section-lede">A collection of moments worth keeping a little closer.</p>
+  <div class="memory-grid" id="memoryGrid"></div>
 </section>
-
-<!-- ===================== QUOTES ===================== -->
 <section class="section quotes" id="quotes">
-  <p class="section-eyebrow">chapter three</p>
-  <h2 class="section-title">Love Quotes</h2>
-
-  <div class="quote-carousel">
-    <div class="quote-mark">&#8220;</div>
-    <p class="quote-text" id="quoteText"></p>
-    <p class="quote-index" id="quoteIndex"></p>
-    <div class="quote-dots" id="quoteDots"></div>
-  </div>
+  <p class="section-eyebrow">chapter three</p><h2 class="section-title">Words About Love</h2>
+  <div class="quote-carousel"><div class="quote-mark">&#8220;</div><p class="quote-text" id="quoteText"></p><p class="quote-index" id="quoteIndex"></p><div class="quote-dots" id="quoteDots"></div></div>
 </section>
-
-<!-- ===================== HIDDEN MESSAGE ===================== -->
 <section class="section secret" id="secret">
-  <p class="section-eyebrow">just for you</p>
-  <h2 class="section-title">One more thing…</h2>
-
-  <div class="reveal-card" id="revealCard">
-    <div class="reveal-inner" id="revealInner">
-      <div class="reveal-front">
-        <span>tap to reveal a hidden message</span>
-      </div>
-      <div class="reveal-back">
-        <p id="hiddenMessage">Replace this with something only they would understand — a joke, a promise, a reason you love them. This is the part they'll screenshot.</p>
-      </div>
-    </div>
-  </div>
+  <p class="section-eyebrow">just for you</p><h2 class="section-title">One more thing…</h2>
+  <div class="reveal-card" id="revealCard"><div class="reveal-inner" id="revealInner"><div class="reveal-front"><span>tap to reveal a hidden message</span></div><div class="reveal-back"><p id="hiddenMessage">For the person who knows why this page exists: some things are better left between two hearts.</p></div></div></div>
 </section>
-
-<!-- ===================== LEAVE A MESSAGE ===================== -->
 <section class="section message" id="message">
-  <p class="section-eyebrow">chapter four</p>
-  <h2 class="section-title">Leave a Love Message</h2>
-  <p class="section-lede">Words left here stay on this device, so you can build a little wall of love over time.</p>
-
-  <form class="message-form" id="messageForm">
-    <div class="field">
-      <label for="msgName">Your name</label>
-      <input type="text" id="msgName" name="msgName" placeholder="Who's this from?" autocomplete="off" />
-    </div>
-    <div class="field">
-      <label for="msgText">Your message</label>
-      <textarea id="msgText" name="msgText" rows="3" placeholder="Write something sweet..."></textarea>
-    </div>
-    <p class="field-error" id="formError" hidden>Add your name and a message before sending it.</p>
-    <button type="submit" class="btn btn-primary">Send with love</button>
-  </form>
-
+  <p class="section-eyebrow">chapter four</p><h2 class="section-title">Leave a Love Message</h2>
+  <p class="section-lede">Leave a few words worth remembering.</p>
+  <form class="message-form" id="messageForm"><div class="field"><label for="msgName">Your name</label><input type="text" id="msgName" name="msgName" placeholder="Who's this from?" autocomplete="off" /></div><div class="field"><label for="msgText">Your message</label><textarea id="msgText" name="msgText" rows="3" placeholder="Write something sweet..."></textarea></div><p class="field-error" id="formError" hidden>Add your name and a message before sending it.</p><button type="submit" class="btn btn-primary">Send with love</button></form>
   <ul class="message-wall" id="messageWall"></ul>
 </section>
-
-<footer class="site-footer">
-  <p>Made with <span class="footer-heart">&#10084;</span> — customize every word, every photo, every quote to make it yours.</p>
-</footer>
-
+<footer class="site-footer"><p>Made with <span class="footer-heart">&#10084;</span></p></footer>
 <script src="script.js"></script>
 </body>
 </html>
