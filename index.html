@@ -3,36 +3,47 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Love Letters</title>
+<meta name="theme-color" content="#171412" />
+<meta name="description" content="A private little corner of the internet for memories, words, and the moments that matter." />
+<title>Love Letters — A Story Worth Keeping</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Dancing+Script:wght@500;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="floatingHearts" class="floating-hearts" aria-hidden="true"></div>
-<nav class="navbar" id="navbar">
-  <a href="#hero" class="nav-brand">Love Letters</a>
+
+<nav class="navbar" id="navbar" aria-label="Primary navigation">
+  <a href="#hero" class="nav-brand" aria-label="Love Letters home">L / L</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <div class="nav-links" id="navLinks">
-    <a href="#story">Our Story</a><a href="#memories">Memories</a><a href="#quotes">Quotes</a><a href="#secret">Surprise</a><a href="#message">Leave a Message</a>
+    <a href="#story">Story</a>
+    <a href="#memories">Memories</a>
+    <a href="#quotes">Words</a>
+    <a href="#secret">Private</a>
+    <a href="#message">Notes</a>
   </div>
 </nav>
+
 <header class="hero" id="hero">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <svg class="hero-heart" viewBox="0 0 200 180" aria-hidden="true"><path d="M100 170 C20 110 0 70 0 40 C0 10 25 -5 50 5 C70 13 90 35 100 55 C110 35 130 13 150 5 C175 -5 200 10 200 40 C200 70 180 110 100 170Z" /></svg>
-  <div class="floating-hearts hero-only" id="heroHearts" aria-hidden="true"></div>
+  <div class="hero-noise" aria-hidden="true"></div>
+  <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+  <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
   <div class="hero-content">
-    <p class="eyebrow">a little corner of the internet, made for two</p>
-    <h1>Love is a story<br>written by two hearts.</h1>
-    <p class="hero-sub">Every scroll is a page. Every page, a memory.</p>
-    <a href="#story" class="btn btn-primary">Begin our story</a>
+    <p class="eyebrow">A small archive of something meaningful</p>
+    <div class="hero-kicker">LOVE / LETTERS <span>01</span></div>
+    <h1>A story worth<br><em>keeping.</em></h1>
+    <p class="hero-sub">For the moments that deserve more than a memory.</p>
+    <a href="#story" class="hero-link">Enter the story <span>↓</span></a>
   </div>
-  <a href="#story" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+  <div class="hero-meta" aria-hidden="true"><span>EST. IN MOMENTS</span><span>PRIVATE EDITION</span></div>
 </header>
+
+<main>
 <section class="section story" id="story">
-  <p class="section-eyebrow">chapter one</p><h2 class="section-title">Our Story</h2>
-  <p class="section-lede">Some stories are written in ink. The best ones are written in moments.</p>
+  <div class="section-head"><span class="section-number">01</span><p class="section-eyebrow">The beginning</p></div>
+  <div class="section-intro"><h2 class="section-title">Every story has<br><em>a first page.</em></h2><p class="section-lede">Some stories are written in ink. The best ones are written in moments — quietly, unexpectedly, and all at once.</p></div>
   <ol class="timeline" id="timeline">
     <li class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">The beginning</span><h3>The day we met</h3><p>Somewhere between two ordinary moments, something extraordinary began.</p></div></li>
     <li class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">A first memory</span><h3>The one that stayed</h3><p>Of all the little moments, some become impossible to forget.</p></div></li>
@@ -40,26 +51,30 @@
     <li class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">Today</span><h3>Still writing</h3><p>There is no final page yet. That's the beautiful part.</p></div></li>
   </ol>
 </section>
+
 <section class="section memories" id="memories">
-  <p class="section-eyebrow">chapter two</p><h2 class="section-title">Beautiful Memories</h2>
-  <p class="section-lede">A collection of moments worth keeping a little closer.</p>
+  <div class="section-head"><span class="section-number">02</span><p class="section-eyebrow">The archive</p></div>
+  <div class="section-intro"><h2 class="section-title">Moments,<br><em>kept close.</em></h2><p class="section-lede">A collection of moments worth keeping a little closer.</p></div>
   <div class="memory-grid" id="memoryGrid"></div>
 </section>
+
 <section class="section quotes" id="quotes">
-  <p class="section-eyebrow">chapter three</p><h2 class="section-title">Words About Love</h2>
-  <div class="quote-carousel"><div class="quote-mark">&#8220;</div><p class="quote-text" id="quoteText"></p><p class="quote-index" id="quoteIndex"></p><div class="quote-dots" id="quoteDots"></div></div>
+  <div class="section-head"><span class="section-number">03</span><p class="section-eyebrow">The words</p></div>
+  <div class="quote-layout"><div><h2 class="section-title">Things worth<br><em>saying twice.</em></h2></div><div class="quote-carousel"><div class="quote-mark">“</div><p class="quote-text" id="quoteText"></p><p class="quote-index" id="quoteIndex"></p><div class="quote-dots" id="quoteDots"></div></div></div>
 </section>
+
 <section class="section secret" id="secret">
-  <p class="section-eyebrow">just for you</p><h2 class="section-title">One more thing…</h2>
-  <div class="reveal-card" id="revealCard"><div class="reveal-inner" id="revealInner"><div class="reveal-front"><span>tap to reveal a hidden message</span></div><div class="reveal-back"><p id="hiddenMessage">For the person who knows why this page exists: some things are better left between two hearts.</p></div></div></div>
+  <div class="secret-frame"><div class="section-head"><span class="section-number">04</span><p class="section-eyebrow">Private edition</p></div><div class="secret-copy"><p class="secret-label">NOT FOR EVERYONE</p><h2 class="section-title">One more<br><em>thing…</em></h2><p>Some words are better discovered than announced.</p></div><div class="reveal-card" id="revealCard"><div class="reveal-inner" id="revealInner" role="button" tabindex="0" aria-label="Reveal hidden message"><div class="reveal-front"><span>Open quietly</span><b>↗</b></div><div class="reveal-back"><p id="hiddenMessage">For the person who knows why this page exists: some things are better left between two hearts.</p></div></div></div></div>
 </section>
+
 <section class="section message" id="message">
-  <p class="section-eyebrow">chapter four</p><h2 class="section-title">Leave a Love Message</h2>
-  <p class="section-lede">Leave a few words worth remembering.</p>
-  <form class="message-form" id="messageForm"><div class="field"><label for="msgName">Your name</label><input type="text" id="msgName" name="msgName" placeholder="Who's this from?" autocomplete="off" /></div><div class="field"><label for="msgText">Your message</label><textarea id="msgText" name="msgText" rows="3" placeholder="Write something sweet..."></textarea></div><p class="field-error" id="formError" hidden>Add your name and a message before sending it.</p><button type="submit" class="btn btn-primary">Send with love</button></form>
+  <div class="section-head"><span class="section-number">05</span><p class="section-eyebrow">Leave a note</p></div>
+  <div class="message-layout"><div><h2 class="section-title">A few words<br><em>to remember.</em></h2><p class="section-lede">Leave something kind. Something honest. Something worth finding again.</p></div><form class="message-form" id="messageForm"><div class="field"><label for="msgName">Your name</label><input type="text" id="msgName" name="msgName" placeholder="Who's this from?" autocomplete="off" /></div><div class="field"><label for="msgText">Your message</label><textarea id="msgText" name="msgText" rows="4" placeholder="Write something worth keeping..."></textarea></div><p class="field-error" id="formError" hidden>Add your name and a message before sending it.</p><button type="submit" class="btn btn-primary">Leave the note <span>→</span></button></form></div>
   <ul class="message-wall" id="messageWall"></ul>
 </section>
-<footer class="site-footer"><p>Made with <span class="footer-heart">&#10084;</span></p></footer>
+</main>
+
+<footer class="site-footer"><span>L / L</span><p>Made with intention.</p><span>∞</span></footer>
 <script src="script.js"></script>
 </body>
 </html>
