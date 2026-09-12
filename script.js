@@ -1,12 +1,8 @@
-/* ==========================================================================
-   LOVE LETTERS — interactions
-   ========================================================================== */
-
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
-window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 navToggle.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
   navToggle.setAttribute('aria-expanded', String(isOpen));
@@ -16,23 +12,22 @@ navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', 
   navToggle.setAttribute('aria-expanded', 'false');
 }));
 
+// A restrained ambient detail: the page gets a few drifting hearts, not a storm of them.
 function spawnHeart(container) {
   const heart = document.createElement('span');
   heart.className = 'floating-heart';
   heart.textContent = '♥';
-  const duration = 7 + Math.random() * 6;
+  const duration = 8 + Math.random() * 5;
   heart.style.left = `${Math.random() * 100}%`;
-  heart.style.fontSize = `${12 + Math.random() * 16}px`;
-  heart.style.setProperty('--drift', `${(Math.random() - 0.5) * 120}px`);
+  heart.style.fontSize = `${10 + Math.random() * 10}px`;
+  heart.style.setProperty('--drift', `${(Math.random() - 0.5) * 100}px`);
   heart.style.animationDuration = `${duration}s`;
   container.appendChild(heart);
   setTimeout(() => heart.remove(), duration * 1000 + 200);
 }
 
 const pageHeartLayer = document.getElementById('floatingHearts');
-const heroHeartLayer = document.getElementById('heroHearts');
-setInterval(() => spawnHeart(pageHeartLayer), 2600);
-setInterval(() => spawnHeart(heroHeartLayer), 1200);
+setInterval(() => spawnHeart(pageHeartLayer), 5000);
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -41,7 +36,7 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.25 });
+}, { threshold: 0.2 });
 
 document.querySelectorAll('.timeline-item').forEach((el) => revealObserver.observe(el));
 
@@ -68,6 +63,7 @@ memories.forEach((memory) => {
     const icon = document.createElement('div');
     icon.className = 'placeholder-icon';
     icon.textContent = '♥';
+    icon.setAttribute('aria-hidden', 'true');
     card.appendChild(icon);
   }
   const caption = document.createElement('div');
@@ -98,7 +94,7 @@ function renderQuote(i) {
   quoteTextEl.classList.remove('visible');
   setTimeout(() => {
     quoteTextEl.textContent = `“${quotes[i]}”`;
-    quoteIndexEl.textContent = `${i + 1} / ${quotes.length}`;
+    quoteIndexEl.textContent = `${String(i + 1).padStart(2, '0')} / ${String(quotes.length).padStart(2, '0')}`;
     quoteTextEl.classList.add('visible');
     [...quoteDotsEl.children].forEach((dot, di) => dot.classList.toggle('active', di === i));
   }, 220);
@@ -106,7 +102,7 @@ function renderQuote(i) {
 function goToQuote(i) { quoteIdx = (i + quotes.length) % quotes.length; renderQuote(quoteIdx); }
 function restartQuoteTimer() {
   clearInterval(quoteTimer);
-  quoteTimer = setInterval(() => goToQuote(quoteIdx + 1), 6000);
+  quoteTimer = setInterval(() => goToQuote(quoteIdx + 1), 6500);
 }
 quotes.forEach((_, i) => {
   const dot = document.createElement('button');
@@ -119,25 +115,33 @@ renderQuote(quoteIdx);
 restartQuoteTimer();
 
 const revealInner = document.getElementById('revealInner');
-revealInner.addEventListener('click', () => {
+function revealSecret() {
   const justRevealed = !revealInner.classList.contains('flipped');
   revealInner.classList.toggle('flipped');
   if (justRevealed) burstHearts();
+}
+revealInner.addEventListener('click', revealSecret);
+revealInner.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    revealSecret();
+  }
 });
+
 function burstHearts() {
   const rect = revealInner.getBoundingClientRect();
-  for (let i = 0; i < 14; i++) setTimeout(() => {
+  for (let i = 0; i < 8; i++) setTimeout(() => {
     const heart = document.createElement('span');
     heart.className = 'floating-heart';
     heart.textContent = '♥';
-    heart.style.left = `${((rect.left + rect.width / 2) / window.innerWidth) * 100 + (Math.random() - 0.5) * 12}%`;
+    heart.style.left = `${((rect.left + rect.width / 2) / window.innerWidth) * 100 + (Math.random() - 0.5) * 10}%`;
     heart.style.bottom = `${window.innerHeight - rect.top}px`;
-    heart.style.fontSize = `${10 + Math.random() * 14}px`;
-    heart.style.setProperty('--drift', `${(Math.random() - 0.5) * 160}px`);
-    heart.style.animationDuration = '3.2s';
+    heart.style.fontSize = `${9 + Math.random() * 10}px`;
+    heart.style.setProperty('--drift', `${(Math.random() - 0.5) * 130}px`);
+    heart.style.animationDuration = '3s';
     pageHeartLayer.appendChild(heart);
-    setTimeout(() => heart.remove(), 3400);
-  }, i * 40);
+    setTimeout(() => heart.remove(), 3200);
+  }, i * 45);
 }
 
 const STORAGE_KEY = 'loveLettersMessages';
@@ -146,6 +150,7 @@ const nameInput = document.getElementById('msgName');
 const textInput = document.getElementById('msgText');
 const formError = document.getElementById('formError');
 const messageWall = document.getElementById('messageWall');
+
 function loadMessages() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch { return []; }
 }
@@ -156,24 +161,25 @@ function renderWall() {
   if (!messages.length) {
     const empty = document.createElement('li');
     empty.className = 'message-wall-empty';
-    empty.textContent = 'No messages yet — be the first to leave one.';
+    empty.textContent = 'No notes yet — leave the first one.';
     messageWall.appendChild(empty);
     return;
   }
-  messages.slice().reverse().forEach((m) => {
+  messages.slice().reverse().forEach((message) => {
     const li = document.createElement('li');
     const p = document.createElement('p');
     p.className = 'msg-text';
-    p.textContent = m.text;
+    p.textContent = message.text;
     const span = document.createElement('span');
     span.className = 'msg-name';
-    span.textContent = `— ${m.name}`;
+    span.textContent = `— ${message.name}`;
     li.append(p, span);
     messageWall.appendChild(li);
   });
 }
-messageForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+
+messageForm.addEventListener('submit', (event) => {
+  event.preventDefault();
   const name = nameInput.value.trim();
   const text = textInput.value.trim();
   if (!name || !text) { formError.hidden = false; return; }
@@ -185,5 +191,6 @@ messageForm.addEventListener('submit', (e) => {
   nameInput.value = '';
   textInput.value = '';
 });
+
 [nameInput, textInput].forEach((el) => el.addEventListener('input', () => { formError.hidden = true; }));
 renderWall();
