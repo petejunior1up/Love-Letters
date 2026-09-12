@@ -29,11 +29,12 @@ const letterButtons=document.querySelectorAll('.letter-open');
 letterButtons.forEach(button=>button.addEventListener('click',()=>{
   const card=button.closest('.letter-card');
   const open=card.classList.toggle('expanded');
+  button.setAttribute('aria-expanded',String(open));
   button.innerHTML=open?'Close letter <span>↖</span>':'Open letter <span>↗</span>';
   if(open) card.scrollIntoView({behavior:'smooth',block:'center'});
 }));
 
-const STORAGE_KEY='loveLettersNotes';
+const STORAGE_KEY='loveArchiveNotes';
 const form=document.getElementById('messageForm');
 const nameInput=document.getElementById('msgName');
 const textInput=document.getElementById('msgText');
