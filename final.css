@@ -1,0 +1,46 @@
+/* THE LOVE ARCHIVE — FINAL EDITION */
+:root{--final-red:#ff174f;--final-red-soft:#ff496b;--final-dark:#05070d;--final-paper:#fff8f5}
+body{background:var(--final-paper)}
+/* Red becomes the visual heartbeat, not decoration. */
+.hero{background:radial-gradient(circle at 72% 30%,rgba(255,23,79,.34),transparent 24%),radial-gradient(circle at 20% 85%,rgba(255,23,79,.12),transparent 28%),#05070d}
+.hero h1 em,.section h2 em,.manifesto-inner h2 em{color:var(--final-red-soft)!important;text-shadow:0 0 45px rgba(255,23,79,.2)}
+.eyebrow,.section-top,.article-tag,.text-link span,.letter-open,.heartbreak-list article>span{color:var(--final-red)!important}
+.archive-ticker{background:var(--final-red)!important;color:#fff!important;border-color:var(--final-red)!important}
+.archive-ticker span:nth-child(even){color:rgba(255,255,255,.28)!important}
+.heart-index{background:linear-gradient(135deg,#fff8f5,#ffe8ed)!important}
+.heart-index:after{background:radial-gradient(circle at 85% 20%,rgba(255,23,79,.2),transparent 28%),radial-gradient(circle at 10% 80%,rgba(255,23,79,.08),transparent 25%)!important}
+.heart-tab:hover,.heart-tab.active{background:var(--final-red)!important;border-color:var(--final-red)!important}
+.heart-entry{background:linear-gradient(135deg,#090b12,#16070d)!important;border-left:5px solid var(--final-red);box-shadow:0 30px 100px rgba(255,23,79,.15)!important}
+.heart-entry:before{color:rgba(255,23,79,.11)!important}
+.heart-entry blockquote{color:#fff!important}
+.feature{background:linear-gradient(180deg,#fff8f5,#ffeef1)!important}
+.article.dark{background:#090a10!important;border-top:3px solid var(--final-red)}
+.letters{background:#f4e9e4!important}
+.letter-card:hover{box-shadow:0 30px 70px rgba(255,23,79,.16)!important}
+.letter-no,.thought-grid span{color:var(--final-red)!important}
+.thoughts{background:#fff8f5}
+.quotes{background:radial-gradient(circle at 80% 20%,rgba(255,23,79,.3),transparent 30%),linear-gradient(135deg,#080910,#180910)!important;border:1px solid rgba(255,23,79,.25)}
+.quote-mark{color:var(--final-red)!important}.quote-controls button.active{background:var(--final-red)!important}
+.note-section{background:#080910!important}
+.note-card{background:linear-gradient(135deg,#ffe4e9,#fff4f1)!important;border-top-color:var(--final-red)!important;box-shadow:0 25px 80px rgba(255,23,79,.1)}
+.btn{background:var(--final-red)!important;box-shadow:0 12px 35px rgba(255,23,79,.18)}
+.btn:hover{background:#d9003e!important;box-shadow:0 16px 45px rgba(255,23,79,.3)!important}
+.message-wall li{border-top:2px solid var(--final-red)}
+.footer{background:#030407!important;border-top:2px solid var(--final-red)!important}
+.footer:before{color:rgba(255,23,79,.075)!important}
+.footer-contact span,.footer-contact a:hover{color:var(--final-red)!important}
+.love-pulse{color:var(--final-red)!important;filter:drop-shadow(0 0 22px rgba(255,23,79,.5))!important}
+.love-pulse:after{border-color:rgba(255,23,79,.35)!important}
+.chapter-rail button.active{background:var(--final-red)!important;border-color:var(--final-red)!important}
+.final-heartline{height:1px;background:linear-gradient(90deg,transparent,var(--final-red),transparent);box-shadow:0 0 24px rgba(255,23,79,.45)}
+.archive-manifesto{background:radial-gradient(circle at center,rgba(255,23,79,.12),transparent 38%),#030407!important}
+.archive-manifesto:before{border-color:rgba(255,23,79,.24)!important}.archive-manifesto:after{border-color:rgba(255,23,79,.12)!important}
+.manifesto-kicker{color:var(--final-red)!important}
+.manifesto-heart{font:clamp(3rem,8vw,7rem)/1 var(--serif);color:var(--final-red);margin:0 0 2rem;filter:drop-shadow(0 0 35px rgba(255,23,79,.4));animation:finalBeat 1.4s ease-in-out infinite}
+.manifesto-inner h2{font-size:clamp(3.5rem,10vw,10rem)!important}
+.manifesto-sub{font-size:.9rem!important;color:rgba(255,255,255,.62)!important}
+.final-whisper{margin-top:5rem;font:italic clamp(1.1rem,2vw,1.5rem)/1.5 var(--serif);color:rgba(255,255,255,.45)}
+.footer-secret{display:inline-block;color:rgba(255,255,255,.45);text-decoration:none;border-bottom:1px solid transparent}.footer-secret:hover{color:var(--final-red);border-color:var(--final-red)}
+@keyframes finalBeat{0%,100%{transform:scale(.9)}50%{transform:scale(1.08)}}
+@media(max-width:800px){.manifesto-heart{animation:none}.hero{background:radial-gradient(circle at 70% 25%,rgba(255,23,79,.3),transparent 30%),#05070d}}
+@media(prefers-reduced-motion:reduce){.manifesto-heart{animation:none}}
