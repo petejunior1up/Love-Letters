@@ -2,7 +2,7 @@
 :root{--final-red:#ff174f;--final-red-soft:#ff496b;--final-dark:#05070d;--final-paper:#fff8f5}
 body{background:var(--final-paper)}
 /* Red becomes the visual heartbeat, not decoration. */
-.hero{background-image:linear-gradient(90deg,rgba(5,7,13,.98) 0%,rgba(5,7,13,.78) 34%,rgba(5,7,13,.16) 68%,rgba(5,7,13,.82) 100%),url("images/couple-silhouette.svg"),radial-gradient(circle at 72% 30%,rgba(255,23,79,.34),transparent 24%),radial-gradient(circle at 20% 85%,rgba(255,23,79,.12),transparent 28%),linear-gradient(135deg,#05070d,#120208);background-size:cover,cover,auto,auto,auto;background-position:center,center,center,center,center;background-blend-mode:normal,screen,normal,normal,normal}
+.hero{background-image:linear-gradient(90deg,rgba(5,7,13,.98) 0%,rgba(5,7,13,.78) 34%,rgba(5,7,13,.16) 68%,rgba(5,7,13,.82) 100%),url("images/editorial-couple.svg"),radial-gradient(circle at 72% 30%,rgba(255,23,79,.34),transparent 24%),radial-gradient(circle at 20% 85%,rgba(255,23,79,.12),transparent 28%),linear-gradient(135deg,#05070d,#120208);background-size:cover,cover,auto,auto,auto;background-position:center,center,center,center,center;background-blend-mode:normal,screen,normal,normal,normal}
 .hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(5,7,13,.65),transparent 30%,rgba(5,7,13,.12) 70%,rgba(5,7,13,.78));z-index:0}.hero-content,.hero-side{position:relative;z-index:2}
 .hero h1 em,.section h2 em,.manifesto-inner h2 em{color:var(--final-red-soft)!important;text-shadow:0 0 45px rgba(255,23,79,.2)}
 .eyebrow,.section-top,.article-tag,.text-link span,.letter-open,.heartbreak-list article>span{color:var(--final-red)!important}
@@ -16,11 +16,11 @@ body{background:var(--final-paper)}
 .heart-entry blockquote{color:#fff!important}
 .feature{background:linear-gradient(180deg,#fff8f5,#ffeef1)!important}
 .article.dark{background:#090a10!important;border-top:3px solid var(--final-red)}
-.letters{background:#f4e9e4!important;position:relative;overflow:hidden}.letters:after{content:"";position:absolute;right:-8vw;top:8%;width:42vw;height:55vw;max-height:720px;background:url("images/couple-silhouette.svg") center/cover no-repeat;opacity:.055;filter:grayscale(1) contrast(1.4);pointer-events:none;mix-blend-mode:multiply}.letters>*{position:relative;z-index:1}
+.letters{background:#f4e9e4!important;position:relative;overflow:hidden}.letters:after{content:"";position:absolute;right:-7vw;top:5%;width:46vw;height:62vw;max-height:760px;background:url("images/editorial-couple.svg") center/cover no-repeat;opacity:.085;filter:grayscale(1) contrast(1.25);pointer-events:none;mix-blend-mode:multiply;mask-image:linear-gradient(to bottom,transparent,black 14%,black 84%,transparent)}.letters>*{position:relative;z-index:1}
 .letter-card:hover{box-shadow:0 30px 70px rgba(255,23,79,.16)!important}
 .letter-no,.thought-grid span{color:var(--final-red)!important}
-.thoughts{background:#fff8f5;position:relative;overflow:hidden}.thoughts:after{content:"";position:absolute;right:-3vw;bottom:-9vw;width:48vw;height:34vw;background:url("images/childhood-silhouette.svg") center/cover no-repeat;opacity:.07;filter:grayscale(1) contrast(1.3);pointer-events:none;mix-blend-mode:multiply}.thoughts>*{position:relative;z-index:1}
-.quotes{background-image:linear-gradient(90deg,rgba(8,9,16,.98),rgba(8,9,16,.72)),url("images/couple-silhouette.svg"),radial-gradient(circle at 80% 20%,rgba(255,23,79,.3),transparent 30%),linear-gradient(135deg,#080910,#180910)!important;background-size:cover,cover,auto,auto!important;background-position:center!important;border:1px solid rgba(255,23,79,.25)}
+.thoughts{background:#fff8f5;position:relative;overflow:hidden}.thoughts:after{content:"";position:absolute;right:-4vw;bottom:-7vw;width:55vw;height:42vw;background:url("images/editorial-childhood.svg") center/cover no-repeat;opacity:.16;filter:grayscale(.8) contrast(1.05);pointer-events:none;mix-blend-mode:multiply;mask-image:linear-gradient(to left,black 45%,transparent 100%)}.thoughts>*{position:relative;z-index:1}
+.quotes{background-image:linear-gradient(90deg,rgba(8,9,16,.98),rgba(8,9,16,.66)),url("images/editorial-couple.svg"),radial-gradient(circle at 80% 20%,rgba(255,23,79,.3),transparent 30%),linear-gradient(135deg,#080910,#180910)!important;background-size:cover,cover,auto,auto!important;background-position:center!important;border:1px solid rgba(255,23,79,.25)}
 .quote-mark{color:var(--final-red)!important}.quote-controls button.active{background:var(--final-red)!important}
 .note-section{background:#080910!important}
 .note-card{background:linear-gradient(135deg,#ffe4e9,#fff4f1)!important;border-top-color:var(--final-red)!important;box-shadow:0 25px 80px rgba(255,23,79,.1)}
@@ -42,6 +42,18 @@ body{background:var(--final-paper)}
 .manifesto-sub{font-size:.9rem!important;color:rgba(255,255,255,.62)!important}
 .final-whisper{margin-top:5rem;font:italic clamp(1.1rem,2vw,1.5rem)/1.5 var(--serif);color:rgba(255,255,255,.45)}
 .footer-secret{display:inline-block;color:rgba(255,255,255,.45);text-decoration:none;border-bottom:1px solid transparent}.footer-secret:hover{color:var(--final-red);border-color:var(--final-red)}
+/* CINEMATIC SILHOUETTE PASS — visual only; existing copy remains untouched. */
+.hero{background-position:center,62% center,center,center,center}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 38%,rgba(255,23,79,.08) 58%,transparent 78%);mix-blend-mode:screen;pointer-events:none;z-index:1}
+.heartbreak{background-image:linear-gradient(90deg,rgba(5,7,13,.98),rgba(5,7,13,.88)),url("images/editorial-couple.svg");background-size:cover,cover;background-position:center,68% center}
+.heartbreak:after{content:"";position:absolute;right:0;top:0;width:min(58vw,900px);height:100%;background:url("images/editorial-couple.svg") 70% center/cover no-repeat;opacity:.12;filter:grayscale(1) contrast(1.3);pointer-events:none;mix-blend-mode:screen}
+.heartbreak>*{position:relative;z-index:2}
+.heart-index{position:relative;overflow:hidden}.heart-index:before{content:"";position:absolute;right:-12vw;top:-9vw;width:52vw;height:52vw;background:url("images/editorial-couple.svg") center/cover no-repeat;opacity:.06;filter:grayscale(1);mix-blend-mode:multiply;pointer-events:none}
+.heart-index>*{position:relative;z-index:1}
+.archive-ticker{box-shadow:0 0 35px rgba(255,23,79,.18)}
+.letters:before{content:"LOVE / MEMORY / TENDERNESS";position:absolute;left:5vw;bottom:7%;writing-mode:vertical-rl;font:700 .5rem var(--sans);letter-spacing:.25em;color:rgba(255,23,79,.24);z-index:1}
+.thoughts:before{content:"CHILDHOOD / FRIENDSHIP / HOME";position:absolute;right:5vw;top:8%;writing-mode:vertical-rl;font:700 .5rem var(--sans);letter-spacing:.25em;color:rgba(255,23,79,.28);z-index:1}
+.quotes:before{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:linear-gradient(90deg,transparent,var(--final-red),transparent);opacity:.7}
 @keyframes finalBeat{0%,100%{transform:scale(.9)}50%{transform:scale(1.08)}}
-@media(max-width:800px){.manifesto-heart{animation:none}.hero{background-image:linear-gradient(180deg,rgba(5,7,13,.92),rgba(5,7,13,.62) 48%,rgba(5,7,13,.94)),url("images/couple-silhouette.svg"),radial-gradient(circle at 70% 25%,rgba(255,23,79,.3),transparent 30%),linear-gradient(135deg,#05070d,#120208);background-position:center}.letters:after{width:75vw;height:80vw;right:-25vw}.thoughts:after{width:80vw;height:55vw;right:-20vw}}
+@media(max-width:800px){.manifesto-heart{animation:none}.hero{background-image:linear-gradient(180deg,rgba(5,7,13,.92),rgba(5,7,13,.56) 48%,rgba(5,7,13,.96)),url("images/editorial-couple.svg"),radial-gradient(circle at 70% 25%,rgba(255,23,79,.3),transparent 30%),linear-gradient(135deg,#05070d,#120208);background-position:center,58% center,center,center}.heartbreak:after{width:100%;opacity:.08}.letters:after{width:82vw;height:88vw;right:-30vw}.thoughts:after{width:95vw;height:68vw;right:-32vw;bottom:-9vw}}
 @media(prefers-reduced-motion:reduce){.manifesto-heart{animation:none}}
