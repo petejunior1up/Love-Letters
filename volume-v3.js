@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const body=document.body;
-  if(!body.classList.contains('archive-page')) return;
+  if(!body.classList.contains('archive-page')&&!body.classList.contains('archive-home')) return;
 
   const progress=document.createElement('div');
   progress.className='archive-page-progress';
@@ -62,10 +62,10 @@
     addEventListener('pointerleave',()=>glow.style.opacity='0');
   }
 
-  document.querySelectorAll('.page-section,.micro-grid article,.timeline article,.letter-slip,.question-deck article,.archive-values article').forEach(el=>{
+  document.querySelectorAll('.page-section,.micro-grid article,.timeline article,.letter-slip,.question-deck article,.archive-values article,.home-volume-grid a').forEach(el=>{
     el.style.opacity='0';el.style.transform='translateY(18px)';
   });
   const io=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting){en.target.style.transition='opacity .7s ease, transform .7s ease';en.target.style.opacity='1';en.target.style.transform='none';io.unobserve(en.target)}}),{threshold:.08});
-  document.querySelectorAll('.page-section,.micro-grid article,.timeline article,.letter-slip,.question-deck article,.archive-values article').forEach(el=>io.observe(el));
+  document.querySelectorAll('.page-section,.micro-grid article,.timeline article,.letter-slip,.question-deck article,.archive-values article,.home-volume-grid a').forEach(el=>io.observe(el));
   render();
 })();
