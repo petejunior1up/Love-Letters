@@ -1,0 +1,16 @@
+/* THE LOVE ARCHIVE — AFTER DARK */
+:root{--archive-red:#ff4d67;--archive-glow:rgba(255,77,103,.16)}
+::selection{background:var(--archive-red);color:#05070d}
+body{overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E")}
+.archive-cursor{position:fixed;width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:0;transform:translate(-50%,-50%);background:radial-gradient(circle,var(--archive-glow),transparent 68%);opacity:0;transition:opacity .25s ease;mix-blend-mode:screen}
+body.archive-pointer .archive-cursor{opacity:1}
+.archive-now{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid rgba(255,255,255,.12);background:rgba(5,7,13,.76);backdrop-filter:blur(14px);font:600 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.archive-now i{width:6px;height:6px;border-radius:50%;background:var(--archive-red);box-shadow:0 0 14px var(--archive-red);animation:archiveBeat 1.7s infinite}
+@keyframes archiveBeat{50%{transform:scale(1.6);opacity:.55}}
+.hero h1 em,.section h2 em{position:relative;text-shadow:0 0 36px rgba(255,77,103,.08)}
+.article,.letter-card,.thought-grid article,.heart-entry{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s ease,box-shadow .35s ease}
+.article:hover,.letter-card:hover,.thought-grid article:hover,.heart-entry:hover{transform:translateY(-5px);border-color:rgba(255,77,103,.35);box-shadow:0 24px 80px rgba(0,0,0,.18)}
+.archive-chapter-label{position:fixed;left:18px;bottom:18px;z-index:80;font:600 9px/1 'DM Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42);writing-mode:vertical-rl;transform:rotate(180deg)}
+@media(max-width:760px){.archive-now{right:10px;bottom:10px}.archive-chapter-label,.archive-cursor{display:none}}
+@media(prefers-reduced-motion:reduce){.archive-now i{animation:none}.article,.letter-card,.thought-grid article,.heart-entry{transition:none}}
